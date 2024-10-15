@@ -27,7 +27,7 @@ export const isObject = (value: unknown): value is Object =>
   getType(value) === 'Object';
 
 // Object utils
-export const has = _has;
+export const has = (obj: {} | undefined, p: string) => _has(obj, p);
 export const hasAny = (obj: object, props: string[]) =>
   _some(props, p => _has(obj, p));
 

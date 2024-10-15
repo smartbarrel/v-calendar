@@ -1,5 +1,5 @@
 <template>
-  <Component v-if="slot" :is="slot" v-bind="$attrs" />
+  <Component v-if="!!slot" :is="slot as any" v-bind="$attrs" />
   <slot v-else />
 </template>
 
@@ -10,7 +10,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { useSlot } from '../../use/slots';
+import { useSlot } from '@/use/slots';
 
 export type CalendarSlotName =
   | 'day-content'
